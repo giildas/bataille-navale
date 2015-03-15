@@ -1,4 +1,4 @@
-#N canvas 670 134 696 514 10;
+#N canvas 919 128 696 514 10;
 #N canvas 351 101 459 256 background 0;
 #X obj 126 60 gemhead 1;
 #X obj 126 132 pix_texture;
@@ -221,7 +221,6 @@
 #X obj -299 -390 tracking;
 #X obj -299 -259 s coords_1;
 #X obj -146 -260 s coords_2;
-#X obj 9 -198 sp/bateau 1 2;
 #X obj -299 -445 ../video_out;
 #X obj -27 -89 s boatsize;
 #X obj -27 -146 loadbang;
@@ -235,11 +234,11 @@
 #X obj 347 54 r soundlimit;
 #X obj 317 82 >;
 #X obj 107 135 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 5695 1;
+-1 -1 5899 1;
 #X obj 137 135 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 5695 1;
+-1 -1 5899 1;
 #X obj 167 135 vsl 15 128 0 100 0 0 empty empty limit 0 -9 0 10 -262144
--1 -1 9900 1;
+-1 -1 9525 1;
 #X obj 167 281 s soundlimit;
 #X obj 244 115 sel 1;
 #X obj 244 196 onebang;
@@ -289,14 +288,24 @@
 #X connect 26 0 25 0;
 #X coords 0 -1 1 1 100 170 1 100 100;
 #X restore 106 -419 pd entree_son;
-#X obj -76 -25 s vitesse_boulet;
-#X msg -76 -46 0.06;
+#X obj -58 1 s vitesse_boulet;
+#X msg -58 -26 0.06;
+#X obj 45 1 s delai_new_vie;
+#X msg 45 -26 5000;
+#X obj -257 1 s nb_blts_init;
+#X obj -257 -53 r reset;
+#X msg -257 -26 3;
+#X obj -160 1 s delai_recharge;
+#X obj -160 -53 r reset;
+#X obj -58 -53 r reset;
+#X obj 45 -53 r reset;
+#X obj 9 -198 sp/bateau 1 2;
 #X obj 100 -199 sp/bateau 2 1;
-#X obj 37 -24 s delai_new_vie;
-#X msg 37 -53 5000;
-#X text -262 -49 reglages : nb boulets debut temps de recharge;
-#X connect 4 0 15 0;
-#X connect 5 0 24 0;
+#X msg -160 -26 3000;
+#X text 197 -205 TODO \; boulet eventail \; trouver bug qui fait planter
+pd;
+#X connect 4 0 32 0;
+#X connect 5 0 33 0;
 #X connect 6 0 7 0;
 #X connect 7 0 3 0;
 #X connect 7 1 4 0;
@@ -304,10 +313,16 @@
 #X connect 10 0 3 0;
 #X connect 12 0 13 0;
 #X connect 12 1 14 0;
-#X connect 18 0 19 0;
-#X connect 19 0 17 0;
-#X connect 20 0 19 0;
-#X connect 21 0 4 0;
-#X connect 21 1 5 0;
-#X connect 23 0 22 0;
-#X connect 26 0 25 0;
+#X connect 17 0 18 0;
+#X connect 18 0 16 0;
+#X connect 19 0 18 0;
+#X connect 20 0 4 0;
+#X connect 20 1 5 0;
+#X connect 22 0 21 0;
+#X connect 24 0 23 0;
+#X connect 26 0 27 0;
+#X connect 27 0 25 0;
+#X connect 29 0 34 0;
+#X connect 30 0 22 0;
+#X connect 31 0 24 0;
+#X connect 34 0 28 0;
