@@ -1,0 +1,7 @@
+#N canvas 0 0 450 300 10;
+#X text 203 21 0 = 1 and vice versa;
+#X obj 65 71 == 0;
+#X obj 65 48 inlet;
+#X obj 65 95 outlet;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;

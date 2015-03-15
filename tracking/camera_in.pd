@@ -1,0 +1,66 @@
+#N canvas 597 124 553 459 10;
+#X obj 225 61 pix_video;
+#X msg 345 4 dialog;
+#X obj 225 82 pix_deinterlace;
+#X obj 226 247 pix_flip;
+#X msg 280 189 none;
+#X msg 157 36 close;
+#X obj 168 290 s video;
+#X obj 225 18 gemhead 10;
+#X obj 103 118 bng 15 250 50 0 empty empty open 17 7 0 10 -262144 -1
+-1;
+#X obj 342 116 bng 15 250 50 0 empty empty dialog 17 7 0 10 -262144
+-1 -1;
+#X obj 157 118 bng 15 250 50 0 empty empty flip_horiz 17 7 0 10 -262144
+-1 -1;
+#X obj 260 138 bng 15 250 50 0 empty empty no_flip 17 7 0 10 -262144
+-1 -1;
+#X obj 226 373 outlet;
+#X obj 103 138 bng 15 250 50 0 empty empty close 17 7 0 10 -262144
+-1 -1;
+#X obj 226 331 pix_crop;
+#X msg 237 289 720;
+#X msg 307 289 0;
+#X msg 341 287 0;
+#X msg 273 289 575;
+#X obj 360 250 loadbang;
+#X msg 333 39 enumerate;
+#X msg 105 189 horizontal;
+#X msg 180 189 vertical;
+#X msg 240 189 both;
+#X obj 157 138 bng 15 250 50 0 empty empty flip_vetical 17 7 0 10 -262144
+-1 -1;
+#X obj 260 118 bng 15 250 50 0 empty empty flip_both 17 7 0 10 -262144
+-1 -1;
+#X obj 341 74 print videoin;
+#X msg 86 57 open 0;
+#X connect 0 0 2 0;
+#X connect 0 1 26 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 3 0 14 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 27 0;
+#X connect 10 0 21 0;
+#X connect 11 0 4 0;
+#X connect 13 0 5 0;
+#X connect 14 0 12 0;
+#X connect 15 0 14 1;
+#X connect 16 0 14 3;
+#X connect 17 0 14 4;
+#X connect 18 0 14 2;
+#X connect 19 0 17 0;
+#X connect 19 0 16 0;
+#X connect 19 0 18 0;
+#X connect 19 0 15 0;
+#X connect 20 0 0 0;
+#X connect 21 0 3 0;
+#X connect 22 0 3 0;
+#X connect 23 0 3 0;
+#X connect 24 0 22 0;
+#X connect 25 0 23 0;
+#X connect 27 0 0 0;
+#X coords 0 -1 1 1 300 55 1 100 100;

@@ -1,0 +1,30 @@
+#N canvas 222 311 493 362 10;
+#X obj 48 182 gemwin;
+#X msg 438 130 destroy;
+#X msg 2 129 create \, 1;
+#X obj 62 48 bng 15 250 50 0 empty empty create 17 7 0 10 -262144 -1
+-1;
+#X obj 137 48 bng 15 250 50 0 empty empty destroy 17 7 0 10 -262144
+-1 -1;
+#X msg 248 129 color 0 0 0;
+#X obj 68 4 loadbang;
+#X msg 301 252 offset 0 0;
+#X obj 92 68 t b b b b b b;
+#X msg 145 130 dimen 1024 576;
+#X msg 328 125 offset 0 0;
+#X msg 78 129 border 1;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 8 0;
+#X connect 4 0 1 0;
+#X connect 5 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 2 0;
+#X connect 8 1 11 0;
+#X connect 8 2 9 0;
+#X connect 8 3 5 0;
+#X connect 8 4 10 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 150 35 1 50 30;

@@ -1,0 +1,16 @@
+#N canvas 455 251 450 300 10;
+#X obj 21 36 inlet;
+#X obj 21 238 outlet;
+#X obj 22 99 onebang 1;
+#X obj 99 238 outlet bang2;
+#X text 173 29 inlet : bang \; outlet 1 & 2: bang \; only outputs one
+bang max \, depending on the argument. Outlet 2 bangs when delay is
+finished;
+#X obj 99 82 delay \$1;
+#X obj 96 43 inlet reset;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 0 5 0;
+#X connect 5 0 2 1;
+#X connect 5 0 3 0;
+#X connect 6 0 2 1;
