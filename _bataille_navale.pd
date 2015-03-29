@@ -1,4 +1,4 @@
-#N canvas 919 128 696 514 10;
+#N canvas 876 410 905 514 10;
 #N canvas 351 101 459 256 background 0;
 #X obj 126 60 gemhead 1;
 #X obj 126 132 pix_texture;
@@ -42,10 +42,8 @@
 #X obj 95 159 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 216 184 tabplay~ tir;
-#X msg 333 30 \; pd dsp 1 \;;
 #X obj 32 131 r explosion_1;
 #X obj 117 131 r explosion_2;
-#X obj 340 1 r reset;
 #X obj 215 132 r boulet_lance_1;
 #X obj 319 131 r boulet_lance_2;
 #X connect 0 0 4 0;
@@ -60,11 +58,10 @@
 #X connect 12 0 11 0;
 #X connect 13 0 2 0;
 #X connect 13 0 2 1;
+#X connect 14 0 12 0;
 #X connect 15 0 12 0;
-#X connect 16 0 12 0;
-#X connect 17 0 14 0;
-#X connect 18 0 3 0;
-#X connect 19 0 3 0;
+#X connect 16 0 3 0;
+#X connect 17 0 3 0;
 #X restore -138 -421 pd son;
 #N canvas 146 98 905 495 images 0;
 #X obj 36 19 loadbang;
@@ -91,7 +88,6 @@
 #X msg 73 103 open images/pixel/bato_3.tif 3;
 #X msg 73 122 open images/pixel/bato_4.tif 4;
 #X msg 71 143 open images/pixel/bato_5.tif 5;
-#X obj 35 167 pix_buffer ship 6;
 #X msg 527 39 open images/pixel/sillage_1.tif 0;
 #X msg 527 61 open images/pixel/sillage_2.tif 1;
 #X msg 308 242 open images/pixel/vie_0.tif 0;
@@ -100,6 +96,8 @@
 #X msg 308 301 open images/pixel/vie_3.tif 3;
 #X msg 308 322 open images/pixel/new_vie.tif 4;
 #X msg 543 260 open images/pixel/new_boulet.tif 0;
+#X msg 71 163 open images/pixel/bato_blanc.tif 6;
+#X obj 35 207 pix_buffer ship 7;
 #X connect 0 0 18 0;
 #X connect 0 0 19 0;
 #X connect 0 0 20 0;
@@ -111,68 +109,69 @@
 #X connect 2 0 4 0;
 #X connect 3 0 4 0;
 #X connect 5 0 15 0;
+#X connect 6 0 27 0;
 #X connect 6 0 28 0;
 #X connect 6 0 29 0;
+#X connect 6 0 26 0;
 #X connect 6 0 30 0;
-#X connect 6 0 27 0;
-#X connect 6 0 31 0;
+#X connect 8 0 24 0;
 #X connect 8 0 25 0;
-#X connect 8 0 26 0;
 #X connect 10 0 17 0;
 #X connect 10 0 16 0;
-#X connect 12 0 32 0;
+#X connect 12 0 31 0;
 #X connect 15 0 7 0;
 #X connect 16 0 11 0;
 #X connect 17 0 11 0;
-#X connect 18 0 24 0;
-#X connect 19 0 24 0;
-#X connect 20 0 24 0;
-#X connect 21 0 24 0;
-#X connect 22 0 24 0;
-#X connect 23 0 24 0;
+#X connect 18 0 33 0;
+#X connect 19 0 33 0;
+#X connect 20 0 33 0;
+#X connect 21 0 33 0;
+#X connect 22 0 33 0;
+#X connect 23 0 33 0;
+#X connect 24 0 9 0;
 #X connect 25 0 9 0;
-#X connect 26 0 9 0;
+#X connect 26 0 14 0;
 #X connect 27 0 14 0;
 #X connect 28 0 14 0;
 #X connect 29 0 14 0;
 #X connect 30 0 14 0;
-#X connect 31 0 14 0;
-#X connect 32 0 13 0;
+#X connect 31 0 13 0;
+#X connect 32 0 33 0;
 #X restore -95 -421 pd images;
-#X obj -32 -341 bng 30 250 50 0 reset empty reset 32 15 0 10 -4034
--4032 -1;
-#X obj 9 -223 bng 15 250 50 0 empty empty fire_1 17 7 0 10 -262144
+#X obj -85 -334 bng 40 250 50 0 reset empty reset 42 20 0 15 -128992
+-257985 -16662;
+#X obj 106 -223 bng 15 250 50 0 empty empty fire_1 17 7 0 10 -262144
 -1 -1;
-#X obj 100 -222 bng 15 250 50 0 empty empty fire_2 17 7 0 10 -262144
+#X obj 199 -223 bng 15 250 50 0 empty empty fire_2 17 7 0 10 -262144
 -1 -1;
 #X obj -25 -408 key;
 #X obj -25 -385 sel 114 97 122;
 #X text 97 -446 "r = reset \, a = tir1 \, z = tir2";
-#N canvas 579 95 733 535 controles 0;
-#X obj 315 121 vsl 20 120 -90 270 0 0 empty empty empty 0 -9 0 10 -203904
--258113 -4160 3947 1;
+#N canvas 1068 127 733 535 controles 0;
+#X obj 271 131 vsl 20 110 -90 270 0 0 empty empty empty 0 -9 0 10 -203904
+-258113 -4160 3615 1;
 #X floatatom 185 307 5 0 0 0 - - -;
-#X obj 185 121 vsl 20 120 -270 90 0 0 empty empty empty 0 -9 0 10 -203904
--258113 -4160 5950 1;
-#X floatatom 315 247 5 0 0 0 - - -;
-#X floatatom 278 247 5 0 360 0 - - -;
-#X floatatom 244 247 4 0 360 0 - - -;
-#X obj 244 340 s coords_2;
+#X obj 172 131 vsl 20 110 -270 90 0 0 empty empty empty 0 -9 0 10 -203904
+-258113 -4160 5450 1;
+#X floatatom 315 307 5 0 0 0 - - -;
+#X floatatom 278 307 5 0 360 0 - - -;
+#X floatatom 244 307 4 0 360 0 - - -;
+#X obj 244 400 s coords_2;
 #X obj 161 333 t b f;
-#X obj 244 312 pack f f f;
-#X obj 252 273 t b f;
-#X obj 291 273 t b f;
+#X obj 244 372 pack f f f;
+#X obj 252 333 t b f;
+#X obj 291 333 t b f;
 #X obj 175 -21 r reset;
-#X obj 107 119 grid grid1 60 -6 -1.4 120 -3.5 3.5 0 0.01 0.01 10 10
--251 -154;
+#X obj 107 129 grid grid1 60 -6 -1.4 114 -3.5 3.5 0 0.01 0.01 10 10
+-253 -199;
 #X floatatom 107 307 5 0 0 0 - - -;
 #X floatatom 142 308 5 0 0 0 - - -;
 #X obj 104 372 pack f f f;
 #X obj 104 400 s coords_1;
 #X obj 121 333 t b f;
 #X msg 107 45 values -3 0;
-#X obj 240 119 grid grid1 60 1.4 6 120 -3.5 3.5 0 0.01 0.01 10 10 -137
--154;
+#X obj 206 129 grid grid1 60 1.4 6 114 -3.5 3.5 0 0.01 0.01 10 10 -173
+-199;
 #X msg 240 45 values 3 0;
 #X msg 228 23 color 177 214 177;
 #X msg 108 24 color 203 231 237;
@@ -212,20 +211,16 @@
 #X connect 22 0 12 0;
 #X connect 23 0 0 0;
 #X connect 24 0 2 0;
-#X coords 0 -1 1 1 250 150 1 100 100;
-#X restore -297 -233 pd controles;
+#X coords 0 -1 1 1 200 130 2 100 120;
+#X restore -299 -265 pd controles;
 #X obj -85 -387 loadbang;
-#X text 240 -107 GEMHEADS : \; 1-mer \; 50-sillage \; 55-bateau 56-degats
+#X text -281 -120 GEMHEADS : \; 1-mer \; 50-sillage \; 55-bateau 56-degats
 \; 58-parchemin \; 65-wintext \; 90-vie \; 80-qté boulets 95-vie+1
 \; 96-boulet+1 \;;
 #X obj -299 -390 tracking;
-#X obj -299 -259 s coords_1;
-#X obj -146 -260 s coords_2;
+#X obj -299 -290 s coords_1;
+#X obj -206 -290 s coords_2;
 #X obj -299 -445 ../video_out;
-#X obj -27 -89 s boatsize;
-#X obj -27 -146 loadbang;
-#X msg -27 -120 0.6;
-#X obj -27 -165 r reset;
 #N canvas 388 164 652 427 entree_son 0;
 #X obj 165 -100 adc~;
 #X floatatom 245 21 5 0 0 0 - - -;
@@ -234,9 +229,9 @@
 #X obj 347 54 r soundlimit;
 #X obj 317 82 >;
 #X obj 107 135 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 5899 1;
+-1 -1 6575 1;
 #X obj 137 135 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 5899 1;
+-1 -1 6571 1;
 #X obj 167 135 vsl 15 128 0 100 0 0 empty empty limit 0 -9 0 10 -262144
 -1 -1 9525 1;
 #X obj 167 281 s soundlimit;
@@ -288,41 +283,60 @@
 #X connect 26 0 25 0;
 #X coords 0 -1 1 1 100 170 1 100 100;
 #X restore 106 -419 pd entree_son;
-#X obj -58 1 s vitesse_boulet;
-#X msg -58 -26 0.06;
-#X obj 45 1 s delai_new_vie;
-#X msg 45 -26 5000;
-#X obj -257 1 s nb_blts_init;
-#X obj -257 -53 r reset;
-#X msg -257 -26 3;
-#X obj -160 1 s delai_recharge;
-#X obj -160 -53 r reset;
-#X obj -58 -53 r reset;
-#X obj 45 -53 r reset;
-#X obj 9 -198 sp/bateau 1 2;
-#X obj 100 -199 sp/bateau 2 1;
-#X msg -160 -26 3000;
-#X text 197 -205 TODO \; boulet eventail \; trouver bug qui fait planter
-pd;
-#X connect 4 0 32 0;
-#X connect 5 0 33 0;
+#X text -281 -14 TODO \; boulet eventail \; trouver bug qui fait planter
+pd \; clignotement \; reglage clignotement;
+#X obj 106 -198 sp/bateau 1 2;
+#X obj 199 -198 sp/bateau 2 1;
+#X obj -197 -390 cnv 15 100 60 empty empty empty 20 12 0 14 -261682
+-66577 0;
+#N canvas 868 307 512 241 reglages 0;
+#X obj -336 74 s boatsize;
+#X obj -336 32 r reset;
+#X obj -308 -11 s vitesse_boulet;
+#X obj -205 -11 s delai_new_vie;
+#X msg -205 -32 5000;
+#X obj -507 -11 s nb_blts_init;
+#X obj -507 -53 r reset;
+#X obj -410 -11 s delai_recharge;
+#X obj -410 -53 r reset;
+#X obj -308 -53 r reset;
+#X obj -205 -53 r reset;
+#X msg -410 -32 2000;
+#X msg -336 53 0.6;
+#X obj -266 32 r reset;
+#X obj -266 74 s delai_invincible;
+#X msg -266 52 5000;
+#X msg -308 -32 0.1;
+#X text -265 86 marche pas top \, touche pas;
+#X msg -507 -32 3;
+#X obj -502 24 r reset;
+#X msg -502 45 3000 3000;
+#X obj -502 66 s delai_new_boulet;
+#X text -504 81 random \$1 + \$2 \; ex : De 0 à 3s. + 3s \; donc entre
+3 et 6s;
+#X connect 1 0 12 0;
+#X connect 4 0 3 0;
+#X connect 6 0 18 0;
+#X connect 8 0 11 0;
+#X connect 9 0 16 0;
+#X connect 10 0 4 0;
+#X connect 11 0 7 0;
+#X connect 12 0 0 0;
+#X connect 13 0 15 0;
+#X connect 15 0 14 0;
+#X connect 16 0 2 0;
+#X connect 18 0 5 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X restore -184 -368 pd reglages;
+#X connect 4 0 18 0;
+#X connect 5 0 19 0;
 #X connect 6 0 7 0;
 #X connect 7 0 3 0;
-#X connect 7 1 4 0;
-#X connect 7 2 5 0;
+#X connect 7 1 18 0;
+#X connect 7 2 19 0;
 #X connect 10 0 3 0;
 #X connect 12 0 13 0;
 #X connect 12 1 14 0;
-#X connect 17 0 18 0;
-#X connect 18 0 16 0;
-#X connect 19 0 18 0;
-#X connect 20 0 4 0;
-#X connect 20 1 5 0;
-#X connect 22 0 21 0;
-#X connect 24 0 23 0;
-#X connect 26 0 27 0;
-#X connect 27 0 25 0;
-#X connect 29 0 34 0;
-#X connect 30 0 22 0;
-#X connect 31 0 24 0;
-#X connect 34 0 28 0;
+#X connect 16 0 4 0;
+#X connect 16 1 5 0;
