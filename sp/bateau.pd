@@ -375,7 +375,7 @@ vie aparaisse \; trop proche du bateau;
 #X restore 45 309 pd win_text;
 #X obj 22 349 cnv 15 150 60 empty empty gestion_boulet 20 12 0 14 -99865
 -262144 0;
-#N canvas 609 408 1108 548 affichage 0;
+#N canvas 595 241 1108 548 affichage 1;
 #X obj 21 95 alpha;
 #X obj 526 385 pix_texture;
 #X msg 535 358 quality 0;
@@ -384,12 +384,12 @@ vie aparaisse \; trop proche du bateau;
 #X obj 98 358 pix_texture;
 #X msg 21 341 quality 0;
 #X obj 21 321 loadbang;
-#X obj 98 278 pix_buffer_read ship;
+#X obj 98 308 pix_buffer_read ship;
 #X obj 215 124 r reset;
 #X msg 215 150 0;
 #X obj 661 231 metro 600;
 #X msg 661 207 1;
-#X obj 661 254 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 661 254 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 526 210 alpha;
 #X obj 21 72 gemhead 55;
@@ -410,7 +410,7 @@ vie aparaisse \; trop proche du bateau;
 #X obj 526 275 pix_buffer_read sillage;
 #X obj 852 328 pix_buffer_read degats;
 #X obj 981 270 metro 600;
-#X obj 981 298 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 981 298 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 981 184 1;
 #X obj 661 181 delay;
@@ -489,8 +489,9 @@ vie aparaisse \; trop proche du bateau;
 #X msg 258 95 0;
 #X obj 526 410 square 1;
 #X obj 526 299 colorRGB 1 1 1 0.4;
-#X obj 112 55 not;
-#X obj 112 28 r clignote_\$1;
+#X obj 353 170 r clignote_\$1;
+#X obj 353 197 sel 0 1;
+#X msg 372 249 6;
 #X connect 0 0 37 0;
 #X connect 1 0 65 0;
 #X connect 2 0 1 0;
@@ -559,8 +560,10 @@ vie aparaisse \; trop proche du bateau;
 #X connect 63 0 64 0;
 #X connect 64 0 62 0;
 #X connect 66 0 1 0;
-#X connect 67 0 15 0;
-#X connect 68 0 67 0;
+#X connect 67 0 68 0;
+#X connect 68 0 60 0;
+#X connect 68 1 69 0;
+#X connect 69 0 8 1;
 #X restore 45 101 pd affichage;
 #X obj 26 7 cnv 15 600 22 empty empty Abstraction_du_Bateau_\$1 150
 12 0 20 -261234 -1 0;
