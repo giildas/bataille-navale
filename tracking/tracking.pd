@@ -1,4 +1,4 @@
-#N canvas 505 50 990 695 10;
+#N canvas 262 32 990 695 10;
 #X obj 396 329 pix_grey;
 #X floatatom 466 327 5 0 0 0 - - -;
 #X obj 396 355 pix_threshold;
@@ -37,10 +37,10 @@
 #X connect 8 0 10 0;
 #X restore 396 381 pd crop;
 #X obj 636 240 vradio 15 1 0 3 empty empty apercu 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 0;
 #X text 655 269 filtré;
 #X obj 833 496 pix_texture;
-#N canvas 699 7 634 657 boussole_1 0;
+#N canvas 578 13 634 657 boussole_1 0;
 #X obj 194 279 moocow/bytes2any;
 #X obj 194 147 select 10;
 #X obj 245 193 list prepend;
@@ -68,9 +68,9 @@
 #X obj 367 610 s rota_2;
 #X obj 367 400 route c;
 #X obj 194 397 route b;
-#X obj 367 579 - 90;
-#X obj 194 578 - 90;
 #X msg 194 62 open 9;
+#X obj 194 578 - 65;
+#X obj 366 579 - 60;
 #X connect 0 0 9 0;
 #X connect 1 0 3 0;
 #X connect 1 0 2 1;
@@ -80,7 +80,7 @@
 #X connect 3 0 0 0;
 #X connect 4 0 2 1;
 #X connect 5 0 14 0;
-#X connect 6 0 28 0;
+#X connect 6 0 26 0;
 #X connect 7 0 14 0;
 #X connect 8 0 7 0;
 #X connect 9 0 10 0;
@@ -93,14 +93,14 @@
 #X connect 18 0 20 0;
 #X connect 19 0 18 0;
 #X connect 21 0 27 0;
-#X connect 22 0 26 0;
+#X connect 22 0 28 0;
 #X connect 24 0 15 0;
 #X connect 25 0 11 0;
-#X connect 26 0 16 0;
-#X connect 26 0 23 0;
+#X connect 26 0 14 0;
 #X connect 27 0 13 0;
 #X connect 27 0 12 0;
-#X connect 28 0 14 0;
+#X connect 28 0 16 0;
+#X connect 28 0 23 0;
 #X restore 412 429 pd boussole_1;
 #X obj 412 411 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -119,9 +119,9 @@
 #X text 821 361 ligne rouge verticale;
 #X obj 265 498 blobtrack -7.11 0 -6 -1.4;
 #X obj 484 497 blobtrack 0 7.11 1.4 6;
-#X msg 396 73 both;
 #X text 436 71 none \, horizontal \, vertical \, both;
 #X obj 739 22 ../sp/crop_interface;
+#X msg 396 73 none;
 #X connect 0 0 2 0;
 #X connect 1 0 2 1;
 #X connect 2 0 9 0;
@@ -148,9 +148,9 @@
 #X connect 21 0 19 0;
 #X connect 22 0 19 0;
 #X connect 23 0 22 0;
-#X connect 24 0 30 0;
+#X connect 24 0 32 0;
 #X connect 28 0 15 0;
 #X connect 29 0 16 0;
-#X connect 30 0 5 0;
-#X connect 32 0 5 1;
+#X connect 31 0 5 1;
+#X connect 32 0 5 0;
 #X coords 0 -1 1 1 100 90 1 630 200;

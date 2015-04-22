@@ -1,4 +1,4 @@
-#N canvas 961 392 688 514 10;
+#N canvas 559 35 688 514 10;
 #N canvas 351 101 459 256 background 0;
 #X obj 126 60 gemhead 1;
 #X obj 126 132 pix_texture;
@@ -230,11 +230,11 @@
 #X obj 347 54 r soundlimit;
 #X obj 317 82 >;
 #X obj 107 135 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6124 1;
+-1 -1 5986 1;
 #X obj 137 135 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6121 1;
+-1 -1 7288 1;
 #X obj 167 135 vsl 15 128 0 100 0 0 empty empty limit 0 -9 0 10 -262144
--1 -1 9525 1;
+-1 -1 12225 1;
 #X obj 167 281 s soundlimit;
 #X obj 244 115 sel 1;
 #X obj 244 196 onebang;
@@ -287,12 +287,11 @@
 #X obj 106 -198 sp/bateau 1 2;
 #X obj -197 -390 cnv 15 100 60 empty empty empty 20 12 0 14 -261682
 -66577 0;
-#N canvas 868 307 512 241 reglages 0;
+#N canvas 699 444 512 241 reglages 1;
 #X obj -336 74 s boatsize;
 #X obj -336 32 r reset;
 #X obj -308 -11 s vitesse_boulet;
 #X obj -205 -11 s delai_new_vie;
-#X msg -205 -32 5000;
 #X obj -507 -11 s nb_blts_init;
 #X obj -507 -53 r reset;
 #X obj -410 -11 s delai_recharge;
@@ -304,7 +303,6 @@
 #X obj -266 32 r reset;
 #X obj -266 74 s delai_invincible;
 #X msg -266 52 5000;
-#X msg -308 -32 0.1;
 #X text -265 86 marche pas top \, touche pas;
 #X msg -507 -32 3;
 #X obj -502 24 r reset;
@@ -312,20 +310,22 @@
 #X obj -502 66 s delai_new_boulet;
 #X text -504 81 random \$1 + \$2 \; ex : De 0 à 3s. + 3s \; donc entre
 3 et 6s;
-#X connect 1 0 12 0;
-#X connect 4 0 3 0;
-#X connect 6 0 18 0;
-#X connect 8 0 11 0;
-#X connect 9 0 16 0;
-#X connect 10 0 4 0;
-#X connect 11 0 7 0;
-#X connect 12 0 0 0;
-#X connect 13 0 15 0;
-#X connect 15 0 14 0;
-#X connect 16 0 2 0;
-#X connect 18 0 5 0;
-#X connect 19 0 20 0;
-#X connect 20 0 21 0;
+#X msg -205 -32 10;
+#X msg -308 -32 0.12;
+#X connect 1 0 11 0;
+#X connect 5 0 16 0;
+#X connect 7 0 10 0;
+#X connect 8 0 22 0;
+#X connect 9 0 21 0;
+#X connect 10 0 6 0;
+#X connect 11 0 0 0;
+#X connect 12 0 14 0;
+#X connect 14 0 13 0;
+#X connect 16 0 4 0;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 21 0 3 0;
+#X connect 22 0 2 0;
 #X restore -184 -368 pd reglages;
 #X obj 199 -198 sp/bateau 2 1;
 #X text -281 -14 TODO \; boulet eventail \; reglage clignotement \;
